@@ -1,73 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
-typedef long double ld;
-typedef map <ll,ll> mm;
 typedef vector <ll> mv;
-typedef pair <ll,ll> mp;
-typedef set <ll> ms;
-typedef queue <ll> mq;
-typedef deque <ll> mdq;
-typedef stack <ll> mst;
-typedef priority_queue <ll> mpq;
-typedef priority_queue <ll, vector<ll>, greater<ll> > mmh;
-#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-#define flush cout.flush();
-#define cn continue
-void swap(ll &a,ll &b)
-{
-	ll tmp=a;
-	a=b;
-	b=tmp;
-}
-ll atoistring(string s)
-{
-	stringstream lol(s);
-	ll x;
-	lol>>x;
-	return x;
-}
-// ll nck(ll N,ll K,ll mod)
-// {
-// 	if(N<K)
-// 	{
-// 		return 0;
-// 	}
-// 	return (((facs[N]*facsinv[N-K])%mod)*facsinv[K])%mod;
-// }
-ll power(ll x,ll y,ll p)
-{
-	ll res=1;
-	x=x%p;
-	while(y>0)
-	{
-		if(y&1)
-		{
-			res=(res*x)%p;
-		}
-		y=y>>1;
-		x=(x*x)%p;
-	}
-	return res;
-}
-void checkmod(ll &x,ll mod)
-{
-	if(x>=mod)
-	{
-		x%=mod;
-	}
-}
-// void checktime()
-// {
-// 	struct timespec ts;
-// 	printf("Running Program\n");
-// 	clock_gettime(CLOCK_MONOTONIC_RAW,&ts);
-// 	long double st=ts.tv_nsec/(1e9)+ts.tv_sec;
-// 	// Call Funcn Here
-// 	clock_gettime(CLOCK_MONOTONIC_RAW,&ts);
-// 	long double en=ts.tv_nsec/(1e9)+ts.tv_sec;
-// 	printf("Program ended\nTime = %Lf\n",en-st);
-// }
+
 ll stakk[100005],size=0,ht[100005];
 mv adj[100005],ancestors[100005];
 void DFS(ll x,ll par,ll height)
